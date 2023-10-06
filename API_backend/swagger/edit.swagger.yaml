@@ -1,0 +1,506 @@
+openapi: 3.0.1
+info:
+  title: Api sobre academia escolar.
+  description: La API se encarga de manejar información almacenada en una base de datos (MongoDB) que contiene datos necesarios para gestionar instituciones educativas o academias.
+  version: 1.0.0
+servers:
+  - url: http://localhost:6925/api
+tags:
+  - name: Asignaturas
+    description: Materias o asignaturas dadas dentro de la institución.
+  - name: Cursos
+    description: Cursos brindados por la institución.
+  - name: Estudiantes
+    description: Estudiantes inscritos actualmente en la institución.
+  - name: Profesores
+    description: Profesores trabajando actualmente en la institución.
+
+paths:
+  /asignaturas:
+    get:
+      tags:
+        - Asignaturas
+      summary: Obtiene los datos de las Asignaturas.
+      parameters:
+        - $ref: "#/components/parameters/token"
+      responses:
+        "200":
+          description: Respuesta exitosa
+  /add/asignaturas:
+    post:
+      tags:
+        - Asignaturas
+      summary: Postea datos para las Asignaturas.
+      requestBody:
+        description: Datos del nuevo curso.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                descripcion:
+                  type: string
+                profesorACargo:
+                  type: string
+                horarioClases:
+                  type: string
+                materialEstudio:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "201":
+          description: Creado exitosamente
+  /upd/asignaturas/{_id}:
+    put:
+      tags:
+        - Asignaturas
+      summary: Actualiza los datos de una Asignatura por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID de la Asignatura a actualizar
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Datos actualizados de la Asignatura.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                descripcion:
+                  type: string
+                profesorACargo:
+                  type: string
+                horarioClases:
+                  type: string
+                materialEstudio:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Actualizado exitosamente
+  /del/asignaturas/{_id}:
+    delete:
+      tags:
+        - Asignaturas
+      summary: Elimina una Asignatura por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID de la Asignatura a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Eliminado exitosamente
+
+  /cursos:
+    get:
+      tags:
+        - Cursos
+      summary: Obtiene los datos de los cursos.
+      parameters:
+        - $ref: "#/components/parameters/token"
+      responses:
+        "200":
+          description: Respuesta exitosa
+  /add/cursos:
+    post:
+      tags:
+        - Cursos
+      summary: Crea un nuevo curso.
+      requestBody:
+        description: Datos del nuevo curso.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombreCurso:
+                  type: string
+                descripcion:
+                  type: string
+                profesorACargo:
+                  type: string
+                horario:
+                  type: string
+                cupoMaximo:
+                  type: integer
+                estudiantesInscritos:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "201":
+          description: Curso creado exitosamente
+  /upd/cursos/{_id}:
+    put:
+      tags:
+        - Cursos
+      summary: Actualiza los datos de un curso por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del curso a actualizar
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Datos actualizados del curso.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombreCurso:
+                  type: string
+                descripcion:
+                  type: string
+                profesorACargo:
+                  type: string
+                horario:
+                  type: string
+                cupoMaximo:
+                  type: integer
+                estudiantesInscritos:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Actualizado exitosamente
+  /del/cursos/{_id}:
+    delete:
+      tags:
+        - Cursos
+      summary: Elimina un curso por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del curso a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Eliminado exitosamente
+
+  /estudiantes:
+    get:
+      tags:
+        - Estudiantes
+      summary: Obtiene los datos de los estudiantes.
+      parameters:
+        - $ref: "#/components/parameters/token"
+      responses:
+        "200":
+          description: Respuesta exitosa
+  /add/estudiantes:
+    post:
+      tags:
+        - Estudiantes
+      summary: Registra un nuevo estudiante.
+      requestBody:
+        description: Datos del nuevo estudiante.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                apell_ido:
+                  type: string
+                fechaNacimiento:
+                  type: string
+                  format: date
+                direccion:
+                  type: string
+                correoElectronico:
+                  type: string
+                numeroTelefono:
+                  type: string
+                matricula:
+                  type: string
+                notas:
+                  type: array
+                  items:
+                    type: number
+                asignaturasInscritas:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "201":
+          description: Estudiante registrado exitosamente
+  /upd/estudiantes/{_id}:
+    put:
+      tags:
+        - Estudiantes
+      summary: Actualiza los datos de un estudiante por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del estudiante a actualizar
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Datos actualizados del estudiante.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                apell_ido:
+                  type: string
+                fechaNacimiento:
+                  type: string
+                  format: date
+                direccion:
+                  type: string
+                correoElectronico:
+                  type: string
+                numeroTelefono:
+                  type: string
+                matricula:
+                  type: string
+                notas:
+                  type: array
+                  items:
+                    type: number
+                asignaturasInscritas:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        "200":
+          description: Actualizado exitosamente
+  /del/estudiantes/{_id}:
+    delete:
+      tags:
+        - Estudiantes
+      summary: Elimina un estudiante por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del estudiante a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Eliminado exitosamente
+
+  /profesores:
+    get:
+      tags:
+        - Profesores
+      summary: Obtiene los datos de los profesores.
+      parameters:
+        - $ref: "#/components/parameters/token"
+      responses:
+        "200":
+          description: Respuesta exitosa
+  /add/profesores:
+    post:
+      tags:
+        - Profesores
+      summary: Registra un nuevo profesor.
+      requestBody:
+        description: Datos del nuevo profesor.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                apell_ido:
+                  type: string
+                fechaNacimiento:
+                  type: string
+                  format: date
+                direccion:
+                  type: string
+                correoElectronico:
+                  type: string
+                numeroTelefono:
+                  type: string
+                materiasEnsenanza:
+                  type: array
+                  items:
+                    type: string
+                experienciaLaboral:
+                  type: string
+      responses:
+        "201":
+          description: Profesor registrado exitosamente
+  /upd/profesores/{_id}:
+    put:
+      tags:
+        - Profesores
+      summary: Actualiza los datos de un profesor por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del profesor a actualizar
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Datos actualizados del profesor.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                apell_ido:
+                  type: string
+                fechaNacimiento:
+                  type: string
+                  format: date
+                direccion:
+                  type: string
+                correoElectronico:
+                  type: string
+                numeroTelefono:
+                  type: string
+                materiasEnsenanza:
+                  type: array
+                  items:
+                    type: string
+                experienciaLaboral:
+                  type: string
+      responses:
+        "200":
+          description: Actualizado exitosamente
+  /del/profesores/{_id}:
+    delete:
+      tags:
+        - Profesores
+      summary: Elimina un profesor por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del profesor a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Eliminado exitosamente
+
+  /paseos:
+    get:
+      tags:
+        - Paseos
+      summary: Obtiene los datos de los paseos.
+      parameters:
+        - $ref: "#/components/parameters/token"
+      responses:
+        "200":
+          description: Respuesta exitosa
+  /add/paseos:
+    post:
+      tags:
+        - Paseos
+      summary: Crea un nuevo paseo.
+      requestBody:
+        description: Datos del nuevo paseo.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                descripcion:
+                  type: string
+                fechaInicio:
+                  type: string
+                fechaFin:
+                  type: string
+                duracionEnDias:
+                  type: number
+      responses:
+        "201":
+          description: Paseo creado exitosamente
+  /upd/paseos/{_id}:
+    put:
+      tags:
+        - Paseos
+      summary: Actualiza los datos de un paseo por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del paseo a actualizar
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Datos actualizados del paseo.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nombre:
+                  type: string
+                descripcion:
+                  type: string
+                fechaInicio:
+                  type: string
+                fechaFin:
+                  type: string
+                duracionEnDias:
+                  type: number
+      responses:
+        "200":
+          description: Actualizado exitosamente
+  /del/paseos/{_id}:
+    delete:
+      tags:
+        - Paseos
+      summary: Elimina un paseo por _ID.
+      parameters:
+        - name: _id
+          in: path
+          description: _ID del paseo a eliminar
+          required: true
+          schema:
+            type: string
+      responses:
+        "204":
+          description: Eliminado exitosamente
+
+components:
+  parameters:
+    token:
+      in: header
+      name: Authorization
+      description: Token de autenticación
+      required: false
