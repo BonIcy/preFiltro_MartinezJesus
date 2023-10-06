@@ -16,10 +16,14 @@ El objetivo principal de este proyecto es facilitar la administración de datos 
 
 ## Componentes del Proyecto
 ### Maquetado y odm, y proceso completo
+
 Links:
-    [Link de commits totales](https://github.com/asynkDF/TrabajoClase_JesusMartinez/tree/main/API_personal) (Este link solo funcionará para los colaboradores del repositorio TrabajoClase_JesusMartinez ya que es donde se trabajo inicialmente el proyecto y donde se seguirá trabajando a futuro, asi que este repositorio es unicamente el entregable)
-    [Maquetacion Figma](https://www.figma.com/file/OQorMha15CQYzFy9ip38CM/Academix-Hub?type=design&node-id=0%3A1&mode=design&t=twT3diqKEFr2IDZO-1) (Link publico)
-    [ODM](https://lucid.app/lucidchart/10b69c32-c39d-4684-afa1-d5fe15f56c98/edit?viewport_loc=-542%2C-327%2C2361%2C1147%2C0_0&invitationId=inv_ec747986-9aed-454f-86d4-957aaa4fe6ff) (Link publico)
+
+[Link de commits totales](https://github.com/asynkDF/TrabajoClase_JesusMartinez/tree/main/API_personal) (Este link solo funcionará para los colaboradores del repositorio TrabajoClase_JesusMartinez ya que es donde se trabajo inicialmente el proyecto y donde se seguirá trabajando a futuro, asi que este repositorio es unicamente el entregable)
+
+[Maquetacion Figma](https://www.figma.com/file/OQorMha15CQYzFy9ip38CM/Academix-Hub?type=design&node-id=0%3A1&mode=design&t=twT3diqKEFr2IDZO-1) (Link publico)
+
+[ODM](https://lucid.app/lucidchart/10b69c32-c39d-4684-afa1-d5fe15f56c98/edit?viewport_loc=-542%2C-327%2C2361%2C1147%2C0_0&invitationId=inv_ec747986-9aed-454f-86d4-957aaa4fe6ff) (Link publico)
 
 El proyecto se compone de dos partes principales:
 
