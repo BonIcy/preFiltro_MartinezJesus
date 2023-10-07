@@ -8,11 +8,7 @@ const estudianteSchema = new mongoose.Schema({
     correoElectronico: String,
     numeroTelefono: String,
     matricula: String,
-    notas: [Number],
-   /*  notas: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref:'notas'
-    }], */
+    notaFinal: String,
     asignaturasInscritas: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'asignaturas'

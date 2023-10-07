@@ -236,10 +236,8 @@ paths:
                   type: string
                 matricula:
                   type: string
-                notas:
-                  type: array
-                  items:
-                    type: number
+                notaFinal:
+                  type: string
                 asignaturasInscritas:
                   type: array
                   items:
@@ -282,10 +280,8 @@ paths:
                   type: string
                 matricula:
                   type: string
-                notas:
-                  type: array
-                  items:
-                    type: number
+                notaFinal:
+                  type: string
                 asignaturasInscritas:
                   type: array
                   items:

@@ -78,7 +78,7 @@ export default function Get() {
               <Card.Meta> <strong>Matricula: </strong>{data.matricula}</Card.Meta>
               <Card.Description>
                 <strong> Numero de celular:</strong> {data.numeroTelefono}<br />
-                <strong> Nota Final:</strong> {data.notas}<br />
+                <strong> Nota Final:</strong> {data.notaFinal}<br />
                 <strong> Correo Electronico:</strong> {data.correoElectronico}
               </Card.Description>
             </>

@@ -91,7 +91,7 @@ export default function Post() {
         correoElectronico: '',
         numeroTelefono: '',
         matricula: '',
-        notas: 0,
+        notaFinal: 0,
       },
       profesores: {
         nombre: '',

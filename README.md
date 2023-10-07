@@ -50,6 +50,6 @@ Este proyecto se encuentra bajo la Licencia MIT. Consulte el archivo LICENSE par
 
 ## Contacto
 
-Si tiene alguna pregunta o sugerencia, no dude en ponerse en contacto con nosotros a través de [correo electrónico](jrey22k@gmail.com) o en [Perfil de Github](https://github.com/asynkdf).
+Si tiene alguna pregunta o sugerencia, no dude en ponerse en contacto con nosotros a través de [Perfil de Github](https://github.com/asynkdf).
 
 ¡Gracias por ser parte de este emocionante proyecto!

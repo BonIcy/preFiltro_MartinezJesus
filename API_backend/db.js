@@ -169,11 +169,7 @@ db.estudiantes(
         "fechaNacimiento": "2000-05-15",
         "matricula": "2023001",
         "nombre": "Juan",
-        "notas": [
-          8.5,
-          7,
-          9.2
-        ],
+        "notaFinal": 3.5,
         "numeroTelefono": "+1234567890"
       },
       {
@@ -191,11 +187,7 @@ db.estudiantes(
         "fechaNacimiento": "2001-03-10",
         "matricula": "2023002",
         "nombre": "Ana",
-        "notas": [
-          7.8,
-          8.9,
-          7.5
-        ],
+        "notaFinal": 1.3,
         "numeroTelefono": "+1122334455"
       },
       {
@@ -213,11 +205,7 @@ db.estudiantes(
         "fechaNacimiento": "2002-11-20",
         "matricula": "2023003",
         "nombre": "Luis",
-        "notas": [
-          9,
-          8.5,
-          9.7
-        ],
+        "notaFinal": 8.4,
         "numeroTelefono": "+9988776655"
       },
       {
@@ -237,11 +225,7 @@ db.estudiantes(
         "fechaNacimiento": "2003-06-15",
         "matricula": "2023004",
         "nombre": "María",
-        "notas": [
-          8,
-          7.5,
-          8.3
-        ],
+        "notaFinal": 6.3,
         "numeroTelefono": "+1122334455"
       }]
 )
